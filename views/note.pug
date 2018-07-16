@@ -1,0 +1,61 @@
+doctype html
+head
+  title Notes
+  style(type='text/css').
+    h1{
+      margin : 10px;
+      text-align: center;
+      color: magents;
+      font-size: 100px;
+    }
+    #list{
+    border: 2px solid black;
+    text-align: left;
+    border-radius: 10px;
+    }
+    #name{
+    font-size: 20px;
+    text-align: left;
+    width:25%;
+    float:left;
+    }
+    #note{
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    width: 75%;
+    float:left;
+    }
+    #title{
+    color:black;
+    font-size:50px;
+    }
+    p{
+    font-size: 35px;
+    }
+    #btn{
+     width:25%;
+     height:40px;
+    }
+    #sign{
+    text-align: center;
+    float:right;
+    height: 35px;
+    width: 15%
+    }
+form(method='POST', action='/addingnote')
+  #myDIV.header
+    h1 Notes
+    button#sign(type='submit', formaction='/signedout') Signout
+    br
+    input#name(type='text', name='title', placeholder='Title')
+    textarea#note(type='text', name='note', placeholder='Write Note')
+    br
+    button#btn(type='submit') Add
+    br
+    for note in mynotelist
+     div#list
+      b
+      h2#title= note.title
+      br
+      p= note.note

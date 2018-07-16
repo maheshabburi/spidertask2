@@ -1,0 +1,120 @@
+doctype html
+head
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  style.
+    body {
+    margin: 0;
+    min-width: 250px;
+    }
+    
+    /* Style the list items */
+    ul li {
+    list-style-type: none;
+    text-align: left;
+    font-size: 18px;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+   
+   
+   
+    /* Style the header */
+    .header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    }
+    /* Clear floats after the header */
+    .header:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    /* Style the input */
+    input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    }
+    /* Style the "Add" button */
+    .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    }
+    .addBtn:hover {
+    background-color: #bbb;
+    }
+    .submitbtn{
+    background-color: #bbb;
+    padding: 5px;
+    float:top-left;
+    text-align: center;
+    font-size: 8px;
+    cursor: pointer;
+    width:15%;
+    height: 35px;
+    }
+form(method='POST', action='/added')
+  #myDIV.header
+    h2(style='margin:5px') My To Do List
+    button.submitBtn(type='submit',formaction='/signout') Signout
+    input#myInput(type='text', placeholder='Title...',name='input')
+    button.addBtn(type='submit') Add
+    button.addbtn(type='submit',formaction='/addnote') View Notes
+  ul#myUL(name='items')
+    for todo in mytodolist
+      if(todo.check=='checked')
+       input(type='checkbox',name='do'+todo.id,checked,value='checked',id='do'+todo.id,onclick='check()')
+       li(id=todo.id)= todo.list
+      else
+       input(type='checkbox',name='do'+todo.id,value='notchecked',id='do'+todo.id,onclick='check()') 
+       li(id=todo.id)= todo.list
+script.
+ var i=1;
+ console.log(#{mytodolist.length});
+ document.getElementById('do'+'1').value='checked';
+ console.log(document.getElementById("do"+i).checked);
+ var el = document.getElementsByTagName("input");
+ check();
+ function check(){
+  console.log(#{mytodolist.length});
+
+  //console.log(document.getElementById("do"+i).checked);
+  for(i=1;i<=#{mytodolist.length};i++)
+  {
+  console.log(el[i].checked);
+  var id="do";
+  if(el[i].checked)
+    el[i].value='checked';
+   // console.log(document.getElementById("do"+i).value);
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  

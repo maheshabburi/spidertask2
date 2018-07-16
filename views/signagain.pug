@@ -1,0 +1,73 @@
+doctype html
+head
+  title Signin
+  style(type='text/css').
+    body{
+    background-image:url('https://www.elegantthemes.com/blog/wp-content/uploads/2016/02/fjord-hdr-1169486-1279x873.jpg');
+     height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    #login{
+    opacity: 0.4;
+    font-size: 30px;
+    height: 50px;
+    width: 380px;
+    border-radius: 13px;
+    text-align: center;
+    color:rgb(0,100,255);
+    }
+    #login:hover{
+    opacity: 1;
+    }
+    #signup{
+    opacity: 0.4;
+    font-size: 30px;
+    height: 50px;
+    width: 380px;
+    border-radius: 13px;
+    text-align: center;
+    color:rgb(0,100,255);
+    }
+    #signup:hover{
+    opacity: 1;
+    }
+    #password{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #password:hover{
+    opacity: 1;
+    }
+    #username{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #username:hover{
+    opacity: 1;
+    }
+    form{
+    text-align:center;
+    margin-top:200px;
+    }
+body    
+ form(action='/', method='GET')
+  input#username(type='text', name='username', placeholder='username')
+  br
+  input#password(type='password', name='password', placeholder='password')
+  br
+  button#login(type='submit') login
+  br
+  button#signup(type='submit', formaction='/signup',method='POST') signup
+  p(style='color:red') NOTE: Invalid email or password Login again or Signup !!!

@@ -1,0 +1,59 @@
+doctype html
+head
+  title Home Page
+  style(type='text/css').
+    form{
+    text-align: center;
+    margin-top: 200px;
+    }
+    #body{
+   background-image: url(http://besttours.com/media/catalog/category/NYC_2-compressor.jpg) ;
+    }
+    #username{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #username:hover{
+    opacity: 1;
+    }
+    #password{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #password:hover{
+    opacity: 1;
+    }
+    #submitbtn{
+    opacity: 0.4;
+    font-size: 30px;
+    height: 50px;
+    width: 380px;
+    border-radius: 13px;
+    text-align: center;
+    color:rgb(0,100,255);
+    }
+    #submitbtn:hover{
+    opacity: 1;
+    }
+    #signupbtn:hover{
+    border: none;
+    cursor: pointer;
+    }
+body#body
+ form(method='POST', action='/login')
+  input#username(type='text', placeholder='Username', name='email')
+  br
+  input#password(type='password', placeholder='Password', name='password')
+  br
+  input#submitbtn(type='submit', value='login')
+  br
+  | &#x9;New to this place then 
+  button#signupbtn(type='submit', formaction='/signup', style='color: blue') Signup

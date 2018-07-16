@@ -1,0 +1,46 @@
+doctype html
+head
+  title Home page
+  style(type='text/css').
+   #username{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #username:hover{
+    opacity: 1;
+    }
+    #password{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #password:hover{
+    opacity: 1;
+    }
+    #login{
+    opacity: 0.4;
+    font-size: 30px;
+    height: 50px;
+    width: 380px;
+    border-radius: 13px;
+    text-align: center;
+    color:rgb(0,100,255);
+    }
+    #login:hover{
+    opacity: 1;
+    }
+form(action='/login', method='POST')
+  p(style='color:green,font-size:20px') Registered succesfully please login !!!
+  input#username(type='text', name='email', placeholder='email',style='font-size:15px')
+  br
+  input#password(type='password', name='password', placeholder='password',style='font-size:15px')
+  br
+  button#login(type='submit') login
+  

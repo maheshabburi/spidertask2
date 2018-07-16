@@ -1,0 +1,84 @@
+doctype html
+head
+  title Signup
+  style(type='text/css').
+    body{
+    background-image:url('https://www.elegantthemes.com/blog/wp-content/uploads/2016/02/trevi-fountain-1213101-1279x886.jpg');
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    #email{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #email:hover{
+    opacity: 1;
+    }
+    #password{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #password:hover{
+    opacity: 1;
+    }
+    #firstname{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #firstname:hover{
+    opacity: 1;
+    }
+    #lastname{
+    opacity: 0.3;
+    border:1px solid blue;
+    font-size: 30px;
+    box-height: 50px;
+    box-width: 400px;
+    border-radius: 13px;
+    }
+    #lastname:hover{
+    opacity: 1;
+    }
+    #btn{
+    opacity: 0.4;
+    font-size: 30px;
+    height: 50px;
+    width: 380px;
+    border-radius: 13px;
+    text-align: center;
+    color:rgb(0,100,255);
+    }
+    #btn:hover{
+    opacity: 1;
+    }
+    form{
+    text-align:center;
+    margin-top:200px;
+    }
+body    
+ form(action='/signedup', method='POST')
+  input#firstname(type='text', name='first_name', placeholder='firstname')
+  br
+  input#lastname(type='text', name='last_name', placeholder='lastname')
+  br
+  input#email(type='text', name='email', placeholder='email')
+  br
+  input#password(type='password', name='password', placeholder='password')
+  br
+  button#btn(type='submit') signup
